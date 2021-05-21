@@ -16,3 +16,22 @@ div[data-type="placeholder"] {
     display: none;
 }
 ```
+
+### Custom placeholder messages
+If you would like to create your own custom placeholder to just create an element like this and set the `data-name` to the specific service:
+```html
+<div data-type="placeholder" data-name="youtube">
+    Your custom message
+</div>
+```
+This will replace the default placeholder with your custom placeholder
+
+### Adding custom button to enable specific service
+To provide the user a button to directly enable a specific service can be done like this:
+```html
+<div data-type="placeholder" data-name="youtube">
+    Your custom message
+    <a onclick="klaro.getManager().updateConsent('youtube', 1);klaro.getManager().saveAndApplyConsents();return false;">Enable Service</a>
+</div>
+```
+Replace `youtube` with your specific service.
